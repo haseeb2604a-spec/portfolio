@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Mobile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        /* --- ALL CSS CODING --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f7;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            /* display: flex; */
+            /* justify-content: center; */
+        }
+
+        nav ul {
+            list-style: none;
+            /* display: flex; */
+            /* justify-content: center; */
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 25px;
+            padding: 10px 20px;
+            /* display: flex; */
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+            /* display: flex; */
+            /* justify-content: center; */
+        }
+
+        nav ul li a:hover {
+            color: #218fe6;
+        }
+
+        /* Hero Banner Section with Background Image */
+        .hero {
+            /* Yahan background image ka link lagaya hai aur overlay add kiya hai */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4B-bMQAGMK23eSFBf22hC0whg27mrBs4s9GwQkbgqMU1nQE9hrkOJNYA&s=10') no-repeat center center/cover;
+            background-color: #14213d;
+            color: white;
+            text-align: center;
+            padding: 140px 20px; /* Thoda padding badha diya taake image achhi dikhe */
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Text par shadow lagayi hy */
+        }
+
+        .hero p {
+            font-size: 30px;
+            /* border-radius: 20px; */
+            margin-bottom: 25px;
+            color: #eee;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+           
+            
+            
+        }
+
+        .btn {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: #218fe6;
+            color: white;
+            transform: scale(1.05); /* Hover par button thoda bada hoga */
+        }
+
+        /* Products Grid Section */
+        .products {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Product Cards */
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border: 1px solid  #333;
+            border-radius: 15px;
+        }
+
+        .img-container {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            /* border-radius: 10px; */
+        }
+
+        .card img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .price {
+            color: #218fe6;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .card-btn:hover {
+            background-color: #218fe6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #888;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            margin-top: 50px;
+        }
+        /* Feature cards section */
+.features { padding: 20px 5% 60px; text-align: center; }
+.features h2 { font-size: 36px; margin-bottom: 40px; }
+.icon-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) { .icon-cards-container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .icon-cards-container { grid-template-columns: 1fr; } }
+
+/* Single Card Design */
+.icon-card {
+    background: #eaf4fd;
+    padding: 45px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #d4e6f7;
+}
+
+/* Hover Effect (Card upar uthega) */
+.icon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 19px 35px rgba(33, 143, 230, 0.15);
+    border-color: #0091ff;
+}
+
+/* Icon Ki Setting */
+.card-icon {
+    font-size: 45px;
+    color: #218fe6; /* Samsung Blue Color */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover karne par icon ghumega */
+.icon-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+/* Heading */
+.icon-card h3 {
+    font-size: 22px;
+    color: #111;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Description Text */
+.icon-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">SAMSUNG</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Banner (With Background Image) -->
+    <section class="hero">
+        <h1>samsung mobile store</h1>
+        <p>welcome to the official samsung mobile store!</p>
+        <button class="btn">Shop Now</button>
+    </section>
+
+    <!-- Latest Mobiles Grid -->
+    <section class="products">
+        <h2>Latest New Arrivals</h2>
+        <!-- <p>All modles avalibles</p> -->
+        <div class="product-grid">
+            
+            <!-- Phone 1 -->
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://www.mabdullah.pk/cdn/shop/files/Samsung-Galaxy-S26-256GB-Storage-12GB-RAM-5-1-600x600.webp?v=1773991255" alt="Galaxy S26 Ultra" loading="lazy" onerror="this.onerror=null;this.src='images/phone-s26.svg'">
+                </div>
+                <h3>Galaxy S26 Ultra</h3>
+                <p class="price">Rs. 489,999</p>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+            <!-- Phone 2 -->
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHBx2bIPLbr2cazW7af7bSXPs4MU41jZOyEHzdFptWaQvz0daeO_hRCw&s=10" alt="Galaxy Z Fold 7" loading="lazy" onerror="this.onerror=null;this.src='images/phone-fold.svg'">
+                </div>
+                <h3>Galaxy Z Fold 7</h3>
+                <p class="price">Rs. 419,990</p>
+                <button class="card-btn">Buy Now</button>
+            </div>
+
+            <!-- Phone 3 -->
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV7KXzkXPtTy9kefrg-lHekJCSuwXs9GkBM_UAH2HPcw&s=10" alt="Galaxy A55 5G" loading="lazy" onerror="this.onerror=null;this.src='images/phone-a55.svg'">
+                </div>
+                <h3>Galaxy A55 5G</h3>
+                <p class="price">Rs. 139,999</p>
+                <button class="card-btn">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Samsung: Feature Cards -->
+    <section class="features">
+        <h2>Why Choose Samsung</h2>
+        <div class="icon-cards-container">
+            <div class="icon-card">
+                <div class="card-icon"><i class="fa-solid fa-battery-full"></i></div>
+                <h3>Long Battery Life</h3>
+                <p>Enjoy up to 2 days of battery life with smart power-saving management.</p>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon"><i class="fa-solid fa-camera"></i></div>
+                <h3>Pro-Grade Camera</h3>
+                <p>Capture ultra-clear photos with our 200MP sensor and Nightography mode.</p>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                <h3>Galaxy AI Power</h3>
+                <p>Smarter everyday tasks with on-device AI: live translate, circle to search and photo assist.</p>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Super Fast Charging</h3>
+                <p>Charge up to 65% in about 30 minutes with 45W fast charging support.</p>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon"><i class="fa-solid fa-signal"></i></div>
+                <h3>Blazing 5G Speed</h3>
+                <p>Stream, game and download in seconds with ultra-fast 5G connectivity.</p>
+            </div>
+            <div class="icon-card">
+                <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h3>Dynamic AMOLED Display</h3>
+                <p>Vivid colors and smooth 120Hz scrolling, bright enough to read in direct sunlight.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Copyright -->
+    <footer>
+        <p>&copy; 2026 Samsung Mobile Store </p>
+        <p>All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
